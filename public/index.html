@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app-container">
+        <div class="login-screen-container">
+            <div class="login-screen" >
+                <input type="text" placeholder="Enter your id" id="name" />
+                <input type="password" placeholder="password" id="password"/>
+                <button id="login-button">Login</button>
+                <button id="signup-button">Sign Up</button> 
+                <div class="status"></div>
+            </div>
+        </div>
+        <div class="chat-screen" style="display: none;">
+            <div class="side-bar">
+                <!-- <div class="search-bar">
+                    <input type="text" placeholder="Search" id="search">
+                </div> -->
+                <div class="your-name">
+                    
+                </div>
+                <!-- <input type="text" placeholder="Search" id="search"> -->
+                <button id="group-create-button">Create Group</button>
+                <!-- append the groups over here from script logic -->
+            </div>
+            <div class="main-content">
+                <div class="message-head"></div>
+                <div class="message-content">
+                    <!-- <p>Hello</p> -->
+                </div>
+                <div class ="message-box-holder">
+                    <label for="add-file-button" class="custom-file-label">+</label>
+                    <input id="add-file-button" type="file">
+                    <!-- <input id="add-image-button" type="image"> -->
+                    <input id="message-box" placeholder="ENter Your Message " type="text">
+                    <button id="send-buffer-button">Send Button</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

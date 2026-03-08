@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif; /* Moved to body for global application */
+    background-color: #4A525A; /* Base background */
+    color: #EAEAEA; /* Default light text for dark mode */
+}
+
+button {
+    border-radius: 10px;
+    border: 1px solid transparent; /* Softened from black */
+    box-shadow: 0 0 2px 1px #9EB7E5;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: rgb(255, 106, 0);
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px;
+}
+
+/* --- LOGIN SCREEN --- */
+.login-screen-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4A525A;
+}
+
+.login-screen {
+    height: 600px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1E2124; /* Softened border */
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgba(128, 128, 128, 0.2); /* Softened shadow */
+    background-color: #24272B;
+    color: #FFFFFF;
+}
+
+.login-screen * {
+    height: 40px;
+    width: 350px;
+    border-radius: 10px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.login-screen button {
+    background-color: #004BA8;
+}
+
+.login-screen button:hover {
+    background-color: #3E78B2;
+}
+
+.login-screen input {
+    background-color: antiquewhite;
+    color: #000000; /* Dark text for light input background */
+}
+
+/* --- CHAT SCREEN --- */
+.chat-screen {
+    margin: 4px;
+    height: calc(100vh - 8px); /* Adjusted to prevent scrolling with the margin */
+    width: calc(100% - 8px);
+    border: 1px solid #1E2124;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+}
+
+/* --- SIDEBAR --- */
+.side-bar {
+    border-right: 2px solid #1E2124; /* Separator between sidebar and chat */
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #24272B;
+}
+
+.side-bar * {
+    height: 40px;
+    width: 90%;
+}
+
+.your-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #9EB7E5; /* Give the username a nice accent color */
+}
+
+.side-bar button {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none; /* Removed harsh top/bottom black borders */
+    border-bottom: 1px solid #3A4047; /* Soft separator */
+    border-radius: 0;
+    background-color: transparent;
+    color: #EAEAEA;
+    text-align: left;
+    padding-left: 15px;
+    box-shadow: none; /* Remove default button shadow for sidebar items */
+}
+
+.side-bar button:hover {
+    background-color: #3A4047; /* Subtle highlight instead of bright orange */
+}
+
+.search-bar {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.search-bar * {
+    height: 80%;
+    width: 100%;
+}
+
+.search-bar input {
+    background-color: #3A4047; /* Dark input for dark mode */
+    color: #FFFFFF;
+}
+
+/* --- MAIN CHAT CONTENT --- */
+.main-content {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #2C3035; /* Main chat background */
+}
+
+.message-head {
+    height: 10%;
+    background-color: #24272B; /* Match sidebar */
+    border-bottom: 2px solid #1E2124;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.message-content {
+    height: 80%;
+    padding: 15px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar for message content */
+.message-content::-webkit-scrollbar {
+    width: 8px;
+}
+.message-content::-webkit-scrollbar-thumb {
+    background-color: #4A525A;
+    border-radius: 4px;
+}
+
+/* --- MESSAGE INPUT AREA --- */
+.message-box-holder {
+    height: 10%;
+    background-color: #24272B; /* Match sidebar header */
+    border-top: 2px solid #1E2124;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.message-box-holder button {
+    height: 70%; /* Scaled down slightly to look better */
+    width: 10%;
+    background-color: #004BA8;
+}
+
+#message-box {
+    height: 70%;
+    width: 70%;
+    box-sizing: border-box;
+    background-color: #3A4047; /* Dark mode input field */
+    color: #FFFFFF;
+    border-radius: 20px; /* Pill shaped input */
+    padding: 0 15px;
+}
+#message-box::placeholder {
+    color: #A0A0A0;
+}
+
+#add-file-button {
+    display: none;
+}
+
+.custom-file-label {
+    height: 60%;
+    aspect-ratio: 1/1;
+    border: 2px solid #9EB7E5; /* Nice blue accent border */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Scaled down slightly */
+    color: #9EB7E5;
+    transition: all 0.2s ease;
+}
+
+.custom-file-label:hover {
+    cursor: pointer;
+    background-color: #9EB7E5;
+    color: #24272B;
+}
+
+/* --- RENDERED MESSAGES --- */
+.message-box {
+    background-color: #3A4047; /* Message bubble color */
+    color: #EAEAEA;
+    border: none; /* Removed harsh #ccc border */
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    max-width: 80%; /* Prevents messages from stretching the whole screen */
+    align-self: flex-start; /* Aligns to the left */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
